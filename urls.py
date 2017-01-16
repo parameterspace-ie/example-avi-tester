@@ -7,7 +7,7 @@ from django.conf.urls import include, patterns, url
 from rest_framework.urlpatterns import format_suffix_patterns
 
 
-api_urls = patterns(
+api_urls = [
 
     url(r'^$',
         views_api.AlertsJobList.as_view(),
@@ -29,12 +29,9 @@ api_urls = patterns(
         views_api.ViewJobsListDetail.as_view(),
         name='api-view-jobs-detail'),
 
-)
+]
 
 api_urls = format_suffix_patterns(api_urls)
-
-# plugin urls have already run 'format_suffix_patterns'
-# So add them after
 
 urlpatterns = patterns(
     '',
@@ -61,5 +58,5 @@ urlpatterns = patterns(
 
     url(r'^result/(?P<job_id>[0-9]+)/$',
         views.job_result,
-        name='job_result')
+        name='job_result'),
 )
