@@ -52,9 +52,11 @@ def run_query(request):
     ID to the user so they can view progress.
     """
     outfile = request.POST.get("outfile")
+    ram_allocation = request.POST.get("ramalloc")
 
     job = AlertsJob.objects.create(
-        outputFile=outfile
+        outputFile=outfile,
+        resources_ram_mb=ram_allocation
     )
     return JsonResponse({})
 

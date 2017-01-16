@@ -28,7 +28,12 @@ GAVIP Example AVIs: Tester AVI
         </div>
         
         <div role="tabpanel" class="tab-pane fade" data-title="SAMPLE" id="job" aria-labelledby="job-tab">
-          {% include "avi/panel_job_list.html" %}
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              Job list help
+            </div>
+          </div>
+          {% include "plugins/gavip_job_table.html" %}
         </div>
 
         <div role="tabpanel" class="tab-pane fade" data-title="SAMPLE" id="help" aria-labelledby="help-tab">
